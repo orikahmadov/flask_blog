@@ -3,6 +3,10 @@
 # Statement for enabling the development environment
 DEBUG = True
 
+#File Upload Folder
+UPLOAD_PATH = "app/images"
+
+
 # Define the application directory
 import os
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))

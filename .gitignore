@@ -3,7 +3,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 #Databse
-*.db
 
 
 # C extensions

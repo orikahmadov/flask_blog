@@ -5,8 +5,9 @@
 
 
 {%block content%}
-<div class =  "container " style = "margin-top:  10px; padding: 200px;">
-<form method = "POST"  class="form">
+<div class =  "container " style = "margin: auto; padding: 140px;">
+    <h4>Register User</h4>
+<form method = "POST"  class="form" enctype="multipart/form-data">
     {{form.csrf_token}}
     {{form.name.label(class= 'form-label')}}
     {{form.name(class= 'form-control form-input')}}
@@ -20,6 +21,9 @@
         {{form.birthday.label(class= 'form-label')}}
     {{form.birthday(class= 'form-control form-input')}}
 
+    {{form.gender.label(class= 'form-label')}}
+    {{form.gender(class= 'form-control form-select')}}
+
         {{form.nationality.label(class= 'form-label')}}
     {{form.nationality(class= 'form-control form-select')}}
 
@@ -30,6 +34,9 @@
         <div class="col">
         {{form.accept_terms.label(class= 'form-check-label')}}
         {{form.accept_terms(class= ' form-check-input')}}
+            <br>
+            {{form.photo.label(class= 'form-label')}}
+            {{form.photo(class= 'form-control-file')}}
             <br>
         {{form.submit(class= 'btn btn-success')}}
         </div>

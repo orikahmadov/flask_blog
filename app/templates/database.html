@@ -1,0 +1,66 @@
+
+{%extends 'index.html'%}
+
+
+
+
+{%block content%}
+{%if empty%}
+<div class="alert alert-warning text-center ">
+  <strong>Warning! </strong> Database is empty you must register a new user
+</div>
+<hr>
+
+<div class="container" style="margin : 100px;">
+ <div class="table-responsive">
+  <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+          <th>Birthday</th>
+          <th>Gender</th>
+          <th>Nationality</th>
+          <th>Account Created</th>
+      </tr>
+    </thead>
+
+  </table>
+ </div>
+</div>
+{%else%}
+<div class="container" style="margin : 100px;">
+ <div class="table-responsive">
+  <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+          <th>Birthday</th>
+          <th>Gender</th>
+          <th>Nationality</th>
+          <th>Account Created</th>
+      </tr>
+    </thead>
+    <tbody>
+          {%for user in users%}
+      <tr>
+        <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.birthday.date()}}</td>
+          <td>{{user.nationality}}</td>
+          <td>{{user.account_created.date()}} {{user.account_created.hour}}:{{user.account_created.minute}}:{{user.account_created.second}}</td>
+          <td><a href="{{url_for('delete_user', userid=user.id)}}" class="btn btn-danger btn-sm">Delete</a></td>
+      </tr>
+    {%endfor%}
+    </tbody>
+  </table>
+</div>
+</div>
+{%endif%}
+{%endblock%}
+
+
