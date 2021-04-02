@@ -23,7 +23,23 @@
 <div class="content">
 {%block content%}
 
+    <div class = "container">
+    <h2 class="text-center">Users</h2>
+        {%for user in users%}
+<div class="card" style="">
+  <img class="card-img-top" src="{{url_for('static', filename =  user.photo)}}" alt="Card image" style="width:10%">
+  <div class="card-body">
+    <h4 class="card-title">{{user.name}}</h4>
+      <p class="card-text"><strong>Email:</strong> {{user.email}}</p>
+      <p class="card-text"><strong>Gender:</strong> {{user.gender}}</p>
+      <p class="card-text"><strong>Birthday:</strong> {{date.strftime(user.birthday, '%d %B %Y')}}</p>
+      <p class="card-text"><strong>Message:</strong> {{user.message}}</p>
 
+
+  </div>
+</div>
+    </div>
+        {%endfor%}
 
 {%endblock%}
 </div>

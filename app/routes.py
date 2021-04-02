@@ -8,7 +8,9 @@ from datetime import datetime
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    users =  User.query.all()
+    date =  datetime
+    return render_template("index.html", users =  users, date =  date)
 
 
 

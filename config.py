@@ -4,7 +4,7 @@
 DEBUG = True
 
 #File Upload Folder
-UPLOAD_PATH = "app/images"
+UPLOAD_PATH = "app/static"
 
 
 # Define the application directory
